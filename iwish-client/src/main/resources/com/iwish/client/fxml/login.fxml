@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" spacing="14" styleClass="root-pane"
+      xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.iwish.client.controller.LoginController">
+    <padding>
+        <Insets top="40" right="50" bottom="40" left="50"/>
+    </padding>
+
+    <Label styleClass="app-title" text="i-Wish"/>
+    <Label styleClass="app-subtitle" text="Make your friends' wishes come true"/>
+
+    <TextField fx:id="usernameField" promptText="Username" maxWidth="260"/>
+    <PasswordField fx:id="passwordField" promptText="Password" maxWidth="260"/>
+
+    <Label fx:id="errorLabel" styleClass="error-label" visible="false" managed="false"/>
+
+    <Button text="Sign In" styleClass="primary-button" onAction="#handleLogin" maxWidth="260"/>
+    <Hyperlink text="New here? Create an account" onAction="#goToRegister"/>
+</VBox>

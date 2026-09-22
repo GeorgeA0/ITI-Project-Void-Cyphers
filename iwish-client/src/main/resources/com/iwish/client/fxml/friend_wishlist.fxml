@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox spacing="12" styleClass="root-pane" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.iwish.client.controller.FriendWishListController">
+    <padding>
+        <Insets top="16" right="16" bottom="16" left="16"/>
+    </padding>
+
+    <Label fx:id="titleLabel" styleClass="section-title" text="Friend's Wish List"/>
+
+    <ListView fx:id="itemsListView" VBox.vgrow="ALWAYS"/>
+
+    <Label text="Contribute towards the selected item:" styleClass="app-subtitle"/>
+    <HBox spacing="8">
+        <TextField fx:id="amountField" promptText="Amount" HBox.hgrow="ALWAYS"/>
+        <Button text="Contribute" styleClass="primary-button" onAction="#handleContribute"/>
+    </HBox>
+
+    <Label fx:id="statusLabel" styleClass="error-label" visible="false" managed="false"/>
+</VBox>
