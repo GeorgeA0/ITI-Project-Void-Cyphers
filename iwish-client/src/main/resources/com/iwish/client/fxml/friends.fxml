@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<HBox spacing="16" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.iwish.client.controller.FriendsController">
+    <padding>
+        <Insets top="16" right="16" bottom="16" left="16"/>
+    </padding>
+
+    <VBox spacing="10" HBox.hgrow="ALWAYS">
+        <Label styleClass="section-title" text="My Friends"/>
+        <ListView fx:id="friendsListView" VBox.vgrow="ALWAYS"/>
+        <HBox spacing="8">
+            <Button text="View Wish List" onAction="#handleViewWishList"/>
+            <Button text="Remove Friend" onAction="#handleRemove"/>
+        </HBox>
+
+        <Label text="Add a friend by username:"/>
+        <HBox spacing="8">
+            <TextField fx:id="addFriendField" promptText="Username" HBox.hgrow="ALWAYS"/>
+            <Button text="Send Request" onAction="#handleSendRequest"/>
+        </HBox>
+        <Label fx:id="statusLabel" styleClass="error-label" visible="false" managed="false"/>
+    </VBox>
+
+    <VBox spacing="10" HBox.hgrow="ALWAYS">
+        <Label styleClass="section-title" text="Pending Requests"/>
+        <ListView fx:id="requestsListView" VBox.vgrow="ALWAYS"/>
+        <HBox spacing="8">
+            <Button text="Accept" onAction="#handleAccept"/>
+            <Button text="Decline" onAction="#handleDecline"/>
+        </HBox>
+    </VBox>
+</HBox>

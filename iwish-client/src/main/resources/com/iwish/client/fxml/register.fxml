@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" spacing="14" styleClass="root-pane"
+      xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.iwish.client.controller.RegisterController">
+    <padding>
+        <Insets top="40" right="50" bottom="40" left="50"/>
+    </padding>
+
+    <Label styleClass="app-title" text="Create your account"/>
+
+    <TextField fx:id="usernameField" promptText="Choose a username" maxWidth="260"/>
+    <PasswordField fx:id="passwordField" promptText="Choose a password" maxWidth="260"/>
+    <PasswordField fx:id="confirmField" promptText="Confirm password" maxWidth="260"/>
+
+    <Label fx:id="errorLabel" styleClass="error-label" visible="false" managed="false"/>
+
+    <Button text="Register" styleClass="primary-button" onAction="#handleRegister" maxWidth="260"/>
+    <Hyperlink text="Already have an account? Sign in" onAction="#goToLogin"/>
+</VBox>

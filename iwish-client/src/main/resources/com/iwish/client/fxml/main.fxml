@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.iwish.client.controller.MainController" styleClass="root-pane">
+
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="10" styleClass="top-bar">
+            <padding>
+                <Insets top="10" right="16" bottom="10" left="16"/>
+            </padding>
+            <Label styleClass="app-title-small" text="i-Wish"/>
+            <Label fx:id="welcomeLabel" styleClass="welcome-label"/>
+            <HBox HBox.hgrow="ALWAYS"/>
+            <Button text="Log Out" onAction="#handleLogout"/>
+        </HBox>
+    </top>
+
+    <center>
+        <TabPane fx:id="tabPane" tabClosingPolicy="UNAVAILABLE">
+            <Tab text="My Wish List">
+                <fx:include fx:id="wishList" source="wishlist.fxml"/>
+            </Tab>
+            <Tab text="Friends">
+                <fx:include fx:id="friends" source="friends.fxml"/>
+            </Tab>
+            <Tab text="Notifications">
+                <fx:include fx:id="notifications" source="notifications.fxml"/>
+            </Tab>
+        </TabPane>
+    </center>
+</BorderPane>
